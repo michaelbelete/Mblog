@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/hello', function(){
     return "<h1> hello world </h1>";
 });
+
+Route::get('/about', function(){
+    return view("pages.about");
+});
