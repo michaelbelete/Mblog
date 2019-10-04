@@ -5,8 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{config('app.name','Mblog')}}</title>
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-        @yield('content')
+    @include('inc.navbar');
+    <main role="main">
+        <div class="container pt-2">
+            @yield('content')
+        </div>
+    </main>
+    <script src="{{ asset('js/bootstrap.js')}}"></script>
+    <script>
+        $(document).ready(function(){
+            alert("mike");
+        });
+    </script>
     </body>
 </html>
+
