@@ -14,12 +14,12 @@
             @yield('content')
         </div>
     </main>
-    <script src="{{ asset('js/bootstrap.js')}}"></script>
     <script>
         $(document).ready(function(){
             alert("mike");
         });
     </script>
+    <script src="{{ asset('js/bootstrap.js')}}"></script>
     </body>
 </html>
 
