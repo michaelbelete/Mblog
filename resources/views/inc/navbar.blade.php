@@ -6,13 +6,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarsExample04">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+                <li class="nav-item active">
                 <a href="/" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                 <a href="/about" class="nav-link">About</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                 <a href="/services" class="nav-link">Services</a>
                 </li>
             </ul>
