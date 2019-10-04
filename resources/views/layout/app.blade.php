@@ -14,12 +14,9 @@
             @yield('content')
         </div>
     </main>
-    <script>
-        $(document).ready(function(){
-            alert("mike");
-        });
-    </script>
-    <script src="{{ asset('js/bootstrap.js')}}"></script>
+    <script src="{{ asset('js/jquery-3.1.1.min.js')}}"></script>
+
+    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
     </body>
 </html>
 
