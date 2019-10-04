@@ -16,6 +16,14 @@
                 <a href="/services" class="nav-link">Services</a>
                 </li>
             </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                <a href="/login" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item active">
+                <a href="/register" class="nav-link">Register</a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
