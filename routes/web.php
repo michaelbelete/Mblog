@@ -11,18 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','pagesController@index');
+Route::get('/about','pagesController@about');
+Route::get('/services','pagesController@services');
 
-Route::get('/hello', function(){
-    return "<h1> hello world </h1>";
-});
-
-Route::get('/about', function(){
-    return view("pages.about");
-});
-
-Route::get('/users/{id}/{name}', function($id,$name){
-    return 'this is user with name'.$name. "and with id of " . $id;
-});
+// Route::get('/hello', function(){
+//     return "<h1> hello world </h1>";
+// });
+// Route::get('/users/{id}/{name}', function($id,$name){
+//     return 'this is user with name '.$name. "and with id of " . $id;
+// });
+// Route::get('/users', function(){
+//     return "My user";
+// });
