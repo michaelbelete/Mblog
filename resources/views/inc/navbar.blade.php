@@ -15,6 +15,9 @@
                 <li class="nav-item active">
                 <a href="/services" class="nav-link">Services</a>
                 </li>
+                <li class="nav-item active">
+                <a href="/posts" class="nav-link">Blog</a>
+                </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item active">
