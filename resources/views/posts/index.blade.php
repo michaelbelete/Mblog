@@ -25,7 +25,7 @@
                 </div>
             @endforeach
         @else
-            <p class="text-center">No Post found</p>
+            <h4 class="container">Opps, No Post found</h4>
         @endif
     </div>
 @endsection

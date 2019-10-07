@@ -14,10 +14,13 @@ class postsController extends Controller
      */
     public function index()
     {
-        // $posts = Post::orderBy('id','desc')->get();
+        // $posts = Post::all();
         // return Post::where('id','2')->get(); // for getting data through where
-        $posts = DB::select('SELECT * FROM posts ORDER BY id DESC');
-        return view('posts.index')->with('posts',$posts);
+        // $posts = DB::select('SELECT * FROM posts ORDER BY id DESC'); //using sql statment
+
+        // $posts = Post::orderBy('id','desc')->take(1)->get(); //limit fetched data by one
+        $posts = Post::orderBy('id','desc')->get();
+        return view('posts.index')->with('posts', $posts);
     }
 
     /**
