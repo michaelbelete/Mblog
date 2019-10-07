@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <h1 class="pb-4">Posts</h1>
         </div>
-        @if(count($posts) > 1)
+        @if(count($posts) > 0)
             @foreach($posts as $post)
                 <div class="col-md-4">
                     <div class="card mb-4 box-shadow">
@@ -24,6 +24,9 @@
                     </div>
                 </div>
             @endforeach
+            <div class="col-md-12">
+                {{ $posts->links()}}
+            </div>
         @else
             <h4 class="container">Opps, No Post found</h4>
         @endif

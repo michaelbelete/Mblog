@@ -19,7 +19,10 @@ class postsController extends Controller
         // $posts = DB::select('SELECT * FROM posts ORDER BY id DESC'); //using sql statment
 
         // $posts = Post::orderBy('id','desc')->take(1)->get(); //limit fetched data by one
-        $posts = Post::orderBy('id','desc')->get();
+        // $posts = Post::orderBy('id','desc')->get();
+
+
+        $posts = Post::orderBy('id','desc')->paginate(1);
         return view('posts.index')->with('posts', $posts);
     }
 
