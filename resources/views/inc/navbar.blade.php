@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
     <div class="container">
-        <a class="navbar-brand" href="#">{{config('app.name', 'Mblog')}}</a>
+        <a class="navbar-brand" href="/"><h3 class="mt-1">{{config('app.name', 'Mblog')}}</h3></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

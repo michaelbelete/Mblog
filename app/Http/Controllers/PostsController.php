@@ -22,7 +22,7 @@ class postsController extends Controller
         // $posts = Post::orderBy('id','desc')->get();
 
 
-        $posts = Post::orderBy('id','desc')->paginate(1);
+        $posts = Post::orderBy('id','desc')->paginate(3);
         return view('posts.index')->with('posts', $posts);
     }
 
@@ -33,7 +33,7 @@ class postsController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**

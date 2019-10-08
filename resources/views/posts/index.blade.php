@@ -3,7 +3,10 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <h1 class="pb-4">Posts</h1>
+            <h1 class="pb-4">
+                <a href="posts/create" class="btn btn-outline-primary ">Create Post</a>
+                Posts
+            </h1>
         </div>
         @if(count($posts) > 0)
             @foreach($posts as $post)
