@@ -9,7 +9,7 @@
         </h3>
         <div class="blog-post">
             <small class="blog-post-meta mb-2">{{ $post->created_at}}</small>
-            <p class="pt-2">{{ $post->body}}</p>
+            <p class="pt-2">{!! $post->body !!}</p>
         </div>
     </div>
 </div>
