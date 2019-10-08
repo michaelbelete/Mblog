@@ -13,6 +13,7 @@
         @include('inc.navbar');
         <main role="main">
             <div class="container pt-2">
+                @include('inc.messages')
                 @yield('content')
             </div>
         </main>
