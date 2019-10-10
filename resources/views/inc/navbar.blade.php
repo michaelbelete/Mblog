@@ -8,7 +8,11 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                <a href="/" class="nav-link">Home</a>
+                @guest
+                    <a href="/" class="nav-link">Home</a>
+                @else
+                    <a href="/dashboard" class="nav-link">Dashboard</a>
+                @endguest
                 </li>
                 <li class="nav-item active">
                 <a href="/about" class="nav-link">About</a>
@@ -34,13 +38,13 @@
                         </li>
                     @endif
                 @else
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/profile">
+                    <!-- <li class="nav-item active">
+                        <a class="nav-link" href="/dashboard">
                             {{ Auth::user()->name }}
                         </a>
-                    </li>
+                    </li> -->
                     <li>
-                        <a class="nav-link active" href="{{ route('logout') }}"
+                        <a class="nav-link" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();"
                         >
