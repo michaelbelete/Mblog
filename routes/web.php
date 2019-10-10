@@ -24,3 +24,7 @@ Route::resource('posts', 'PostsController');
 // Route::get('/users', function(){
 //     return "My user";
 // });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
