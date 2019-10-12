@@ -7,12 +7,16 @@
     <div class="row container">
         <div class="col-md-12">
             <h3><a href="/posts" class="btn btn-outline-success mr-3">Go back</a>Edit Post</h3>
-            <form action="/posts/{{ $post->id }}" method="POST">
+            <form action="/posts/{{ $post->id }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input type="text" class="form-control" name="title" placeholder="Enter you title here" value="{{$post->title}}">
+                </div>
+                <div class="form-group">
+                    <label for="title">Heading Image</label>
+                    <input type="file" class="form-control" name="cover_image" placeholder="Enter your cover here">
                 </div>
                 <div class="form-group">
                     <label for="title">Body</label>
@@ -29,7 +33,7 @@
 <script>
 tinymce.init({
         selector: "#body",
-        height: '320px',
+        height: '32 0px',
         plugins: [
              "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
              "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",

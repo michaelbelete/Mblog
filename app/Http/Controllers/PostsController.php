@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Post;
 use DB;
 class postsController extends Controller
@@ -131,9 +132,25 @@ class postsController extends Controller
             'body' => 'required'
         ]);
 
+        if($request->hasFile('cover_image')){
+            //get orginal filename with extension
+            $orginalImage = $request->file('cover_image')->getClientOriginalName();
+            //get just filename
+            $filename = pathinfo($orginalImage, PATHINFO_FILENAME);
+            //get the extension
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            //filename to store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            //upload image
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+        }
+
         $post = POST::find($id);
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        if($request->hasFile('cover_image')){
+            $post->cover_image = $fileNameToStore;
+        }
         $post->save();
 
         return redirect('/posts')->with('success', 'Post Updated');
@@ -151,6 +168,10 @@ class postsController extends Controller
         //check for the correct user
         if(auth()->user()->id !== $post->user_id){
             return redirect('/posts')->with('error', "This post can't be edited");
+        }
+        if($post->cover_image != 'noimage.jpg'){
+            //delete image
+            Storage::delete('public/cover_images/'.$post->cover_image);
         }
         $post->delete();
         return redirect('/posts')->with('success', 'Post Deleted');

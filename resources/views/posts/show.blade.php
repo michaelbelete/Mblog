@@ -22,6 +22,7 @@
                     @endif
                 </h3>
                 <div class="blog-post">
+                    <img src="/storage/cover_images/{{ $post->cover_image}}" class="card-img-top" alt="Heading Image" style="min-height:300px; min-width:300px; max-height:600px; max-width:100%;  display: block;">
                     <p class="pt-2">{!! $post->body !!}</p>
                 </div>
             </div>
