@@ -33,4 +33,25 @@
         </div>
     </div>
 </div>
+@guest
+<div class="alert alert-info text-center mt-2">
+    <p>Please <a href="/login">login</a> or <a href="/register">signup</a> to comment</p>
+</div>
+@else
+    <!-- comment section -->
+    <div class="card mt-4">
+        <div class="card-body">
+            <form method="post">
+                <div class="form-group">
+                    <label for="comment">Your Comment</label>
+                    <textarea name="comment" class="form-control" rows="5" style="resize:none;"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Comment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- comment section -->
+@endguest
 @endsection
