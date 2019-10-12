@@ -7,7 +7,7 @@
     <div class="row container">
         <div class="col-md-12">
             <h3>Create Post</h3>
-            <form action="/posts" method="POST" enctype="multipart/data">
+            <form action="/posts" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="title">Title</label>
