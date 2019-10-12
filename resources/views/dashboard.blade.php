@@ -50,7 +50,7 @@
                     @endforeach
                 @else
                     <tr>
-                        <td colspan="3" class="text-center">There is no post</td>
+                        <td colspan="4" class="text-center">There is no post</td>
                     </tr>
                 @endif
                 </tbody>
