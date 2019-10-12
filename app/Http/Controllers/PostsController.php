@@ -90,7 +90,14 @@ class postsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
+
+        //check for the correct user
+        if(auth()->user()->id !== $post->user_id){
+            return redirect('/posts')->with('error', "This post can't be edited");
+        }
+
         return view('posts.edit')->with('post', $post);
+
     }
 
     /**
@@ -124,6 +131,10 @@ class postsController extends Controller
     public function destroy($id)
     {
         $post = POST::find($id);
+        //check for the correct user
+        if(auth()->user()->id !== $post->user_id){
+            return redirect('/posts')->with('error', "This post can't be edited");
+        }
         $post->delete();
         return redirect('/posts')->with('success', 'Post Deleted');
     }

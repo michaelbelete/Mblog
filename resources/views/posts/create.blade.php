@@ -7,11 +7,15 @@
     <div class="row container">
         <div class="col-md-12">
             <h3>Create Post</h3>
-            <form action="/posts" method="POST">
+            <form action="/posts" method="POST" enctype="multipart/data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" class="form-control" name="title" placeholder="Enter you title here">
+                    <input type="text" class="form-control" name="title" placeholder="Enter your title here">
+                </div>
+                <div class="form-group">
+                    <label for="title">Heading Image</label>
+                    <input type="file" class="form-control" name="cover_image" placeholder="Enter your cover here">
                 </div>
                 <div class="form-group">
                     <label for="title">Body</label>
