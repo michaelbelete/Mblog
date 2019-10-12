@@ -1,6 +1,10 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
     <div class="container">
-        <a class="navbar-brand" href="/"><h3 class="mt-1">{{config('app.name', 'Mblog')}}</h3></a>
+        @guest
+            <a class="navbar-brand" href="/"><h3 class="mt-1">{{config('app.name', 'Mblog')}}</h3></a>
+        @else
+            <a class="navbar-brand" href="/dashboard"><h3 class="mt-1">{{config('app.name', 'Mblog')}}</h3></a>
+        @endguest
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>

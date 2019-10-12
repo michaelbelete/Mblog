@@ -21,7 +21,7 @@
                     </textarea>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary"><b>Edit Post</b></button>
+                    <button class="btn btn-primary"><b>Submit</b></button>
                 </div>
             </form>
         </div>
@@ -29,7 +29,7 @@
 <script>
 tinymce.init({
         selector: "#body",
-        height: '350px',
+        height: '320px',
         plugins: [
              "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
              "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
