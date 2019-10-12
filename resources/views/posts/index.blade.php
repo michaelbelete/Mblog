@@ -30,7 +30,11 @@
                 {{ $posts->links()}}
             </div>
         @else
-            <h4 class="container">Opps, No Post found</h4>
+            <div class="container text-center">
+                <h4>Opps, No Post found</h4>
+            </div>
+
+
         @endif
     </div>
 @endsection
