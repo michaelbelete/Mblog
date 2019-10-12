@@ -13,8 +13,8 @@ class AddCoverImageToPost extends Migration
      */
     public function up()
     {
-        Schema::table('post', function (Blueprint $table) {
-            //
+        Schema::table('posts', function (Blueprint $table) {
+            $table->string('cover_image');
         });
     }
 
@@ -25,8 +25,8 @@ class AddCoverImageToPost extends Migration
      */
     public function down()
     {
-        Schema::table('post', function (Blueprint $table) {
-            //
+        Schema::table('posts', function (Blueprint $table) {
+            $table->dropColumn('cover_image');
         });
     }
 }
