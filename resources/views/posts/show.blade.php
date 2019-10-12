@@ -41,11 +41,13 @@
     <!-- comment section -->
     <div class="card mt-4">
         <div class="card-body">
-            <form method="post">
+            <form method="post" action="/comments">
+                @csrf
                 <div class="form-group">
                     <label for="comment">Your Comment</label>
                     <textarea name="comment" class="form-control" rows="5" style="resize:none;"></textarea>
                 </div>
+                <input type="hidden" name="post_id" value="{{ $post->id }}">
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Comment</button>
                 </div>

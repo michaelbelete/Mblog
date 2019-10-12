@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Comment;
+
 class CommentController extends Controller
 {
     /**
@@ -34,7 +36,16 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'comment' => 'required',
+            'post_id' => 'required'
+        ]);
+        $post_id = $request->input('post_id');
+        $comment = new Comment;
+        $comment->comment = $request->input('comment');
+        $comment->save();
+
+        return redirect('/posts/'. $post_id)->with('success', 'Your comment is created');
     }
 
     /**

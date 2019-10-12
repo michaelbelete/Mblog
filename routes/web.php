@@ -15,6 +15,7 @@ Route::get('/','pagesController@index');
 Route::get('/about','pagesController@about');
 Route::get('/services','pagesController@services');
 Route::resource('posts', 'PostsController');
+Route::resource('comments','CommentController');
 // Route::get('/hello', function(){
 //     return "<h1> hello world </h1>";
 // });
