@@ -43,6 +43,7 @@ class CommentController extends Controller
         $post_id = $request->input('post_id');
         $comment = new Comment;
         $comment->comment = $request->input('comment');
+        $comment->post_id = $request->input('post_id');
         $comment->save();
 
         return redirect('/posts/'. $post_id)->with('success', 'Your comment is created');
