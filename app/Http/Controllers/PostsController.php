@@ -118,7 +118,7 @@ class postsController extends Controller
 
         //check for the correct user
         if(auth()->user()->id !== $post->user_id){
-            return redirect('/posts')->with('error', "This post can't be edited");
+            return redirect('/posts')->with('errors', "This post can't be edited");
         }
 
         return view('posts.edit')->with('post', $post);
